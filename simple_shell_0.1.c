@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * main -
+ * main - Version petit shell qui imprimera qui exécute /bin/ls -l /tmp
+ * Return: 0 s(always, success)
  */
 
-int main (void)
+int main(void)
 {
 	char *ligne_lue = NULL;
 	size_t taille_buffer = 0;
@@ -15,7 +16,7 @@ int main (void)
 
 	while (1)
 	{
-		printf ("$ ");
+		printf("$ ");
 
 		nb_caracteres_lus = getline(&ligne_lue, &taille_buffer, stdin);
 
@@ -29,14 +30,14 @@ int main (void)
 
 		if (pid_enfant == -1)
 		{
-			perror ("fork");
+			perror("fork");
 			return (-1);
 		}
 		else if (pid_enfant == 0)
 		{
 			execve(arguments[0], arguments, environ);
-			perror ("execve");
-			exit (1);
+			perror("execve");
+			exit(1);
 		}
 		else
 		{
