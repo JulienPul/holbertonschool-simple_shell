@@ -2,7 +2,7 @@
 
 /**
  * main - Version petit shell qui imprimera qui exécute /bin/ls -l /tmp
- * Return: 0 s(always, success)
+ * Return: 0 si succès sinon retourne 1
  */
 
 int main(void)
