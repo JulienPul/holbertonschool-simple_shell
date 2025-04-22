@@ -8,10 +8,11 @@
 void execute_commande(char *commande)
 {
 	pid_t pid_enfant;
+	int status;
 	char *argv[2];
 	argv[0] = commande;
 	argv[1] = NULL;
-	int status;
+	
 
 	pid_enfant = fork();
 
