@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 
 extern char **environ;
-void execute_command(char **argv);
+void execute_command(char **argv, char *program_name);
 char **tokenize_line(char *line);
 
 #endif /* MAIN_H */
