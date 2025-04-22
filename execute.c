@@ -9,6 +9,7 @@ void execute_command(char *commande)
 {
 	pid_t pid_enfant;
 	char *argv[] = {commande, NULL};
+	int status;
 
 	pid_enfant = fork();
 
@@ -24,11 +25,11 @@ void execute_command(char *commande)
 		if (execve(commande, argv, environ) == -1)
 		{
 			perror("./shell");
-			exit(EXIT_FAILURE);
+			exit(1);
 		}
 	}
 	else
 	{
-		wait(NULL);
+		wait(&status);
 	}
 }
