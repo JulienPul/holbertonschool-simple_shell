@@ -32,7 +32,7 @@ int main(void)
 		if (line[read - 1] == '\n')
 			line[read - 1] = '\0';
 
-		argv = -------------------------protostrtok(line);
+		argv = tokenize_line(line);
 		if (argv[0] != NULL)
 			execute_command(argv);
 	}
