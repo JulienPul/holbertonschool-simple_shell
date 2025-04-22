@@ -19,13 +19,12 @@ int main(void)
 		printf("$ ");
 		nb_caracteres_lus = getline(&ligne_lue_tape, &taille_buffer_getline, stdin);
 
-		if (nb_caracteres_lus == -1) /* Ctrl+D */
+		if (nb_caracteres_lus == -1)
 		{
 			free(ligne_lue_tape);
 			exit(0);
 		}
 
-		/* Supprimer le \n à la fin de la ligne lue */
 		if (ligne_lue_tape[nb_caracteres_lus - 1] == '\n')
 			ligne_lue_tape[nb_caracteres_lus - 1] = '\0';
 
