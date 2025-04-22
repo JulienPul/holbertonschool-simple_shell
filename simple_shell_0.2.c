@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * main - ?? a faire après :)
+ * main - Petit shell qui lit une ligne et exécute la commande avec arguments
+ * Return: 0 (Toujours)
  */
 
 int main(void)
@@ -11,22 +12,42 @@ int main(void)
 	ssize_t nb_caracteres_lus;
 	pid_t pid_enfant;
 	int statut;
-	char *arguments[] = {"/bin/ls", "-l", "/tmp", NULL};
+	char *args[64];
+	char *token;
+	int i;
 
 	while (1)
 	{
 		printf("$ ");
 
 		nb_caracteres_lus = getline(&ligne_lue, &taille_buffer, stdin);
-
 		if (nb_caracteres_lus == -1)
 		{
 			free(ligne_lue);
 			exit(0);
 		}
 
-		pid_enfant = fork();
+		/* Supprimer le saut de ligne */
+		for (i = 0; ligne_lue[i]; i++)
+		{
+			if (ligne_lue[i] == '\n')
+			{
+				ligne_lue[i] = '\0';
+				break;
+			}
+		}
+		
+		token = strtok(ligne_lue, " ");
+		i = 0;
+		while (token != NULL)
+		{
+			args[i] = token;
+			i++;
+			token = strtok(NULL, " ");
+		}
+		args[i] = NULL;
 
+		pid_enfant = fork();
 		if (pid_enfant == -1)
 		{
 			perror("fork");
@@ -34,7 +55,7 @@ int main(void)
 		}
 		else if (pid_enfant == 0)
 		{
-			execve(arguments[0], arguments, environ);
+			execve(args[0], args, environ);
 			perror("execve");
 			exit(1);
 		}
@@ -42,6 +63,5 @@ int main(void)
 		{
 			wait(&statut);
 		}
-
 	}
 }
