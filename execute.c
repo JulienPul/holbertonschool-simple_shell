@@ -20,7 +20,7 @@ void execute_command(char *commande)
 	}
 
 	if (pid_enfant == 0)
-	
+
 	{
 		if (execve(commande, argv, environ) == -1)
 		{
