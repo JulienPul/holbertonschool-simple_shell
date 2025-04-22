@@ -5,14 +5,13 @@
  * @line: chaîne à découper (tokenizer) par strtok
  * Return: Tableau NULL ou tableau de char* terminé par NULL (à free après)
  */
-
- char **tokenize_line(char *line)
- {
+char **tokenize_line(char *line)
+{
 	char **words_token;
 	char *word_token;
 	int i = 0;
 
-	words_token = malloc(65 * sizeof(char*));
+	words_token = malloc(65 * sizeof(char *));
 
 	if (words_token == NULL)
 	{
@@ -30,7 +29,7 @@
 			perror("strdup");
 			while (i-- > 0)
 			{
-				free (words_token[i]);
+				free(words_token[i]);
 			}
 			free(words_token);
 			return (NULL);
@@ -39,5 +38,5 @@
 		word_token = strtok(NULL, " \n");
 	}
 	words_token[i] = NULL;
-	return(words_token);
- }
+	return (words_token);
+}
