@@ -15,7 +15,7 @@ int main(void)
 		/* Affiche le prompt seulement si entrée clavier */
 		if (isatty(STDIN_FILENO))
 		{
-			printf("#cisfun$ ");
+			printf("$ ");
 			fflush(stdout);
 		}
 		read = getline(&line, &len, stdin);
