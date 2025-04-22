@@ -1,18 +1,18 @@
 #include "main.h"
 /**
  * main - main function for command interpreter
- * @ac: argument count (unused)
- * @av: argument vector, used to get program name
+ * @argc: argument count (unused)
+ * @argv: argument vector, used to get program name
  * Return: 0 if success
  */
-int main(int ac, char **av)
+int main(int argc, char *argv[])
 {
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
 	char **argv;
 	int i;
-	(void)ac;
+	(void)argc;
 
 	while (1)
 	{
@@ -35,7 +35,7 @@ int main(int ac, char **av)
 		{
 			if (strcmp(argv[0], "exit") == 0)
 				break;
-			execute_command(argv, av[0]);
+			execute_command(argv, argv[0]);
 		}
 		if (argv)
 		{
