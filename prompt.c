@@ -12,13 +12,15 @@ void boucle_principale(void)
 
 	while (1)
 	{
-		write (STDOUT_FILENO, "$ ", 2);
+		printf("$ ");
+		fflush(stdout);
+
 		lu = getline(&ligne_tapee, &taille_buffer_getline, stdin);
 
 		if (lu == -1) /* Ctrl+D ou EOF*/
 		{
 			free(ligne_tapee);
-			write(STDOUT_FILENO, "\n", 1);
+			printf("\n");
 			break;
 		}
 		if (ligne_tapee[lu - 1] == '\n')
