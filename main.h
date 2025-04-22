@@ -11,6 +11,6 @@
 extern char **environ;
 
 void boucle_principale(void);
-void execute_command(char *commande);
+void execute_commande(char *commande);
 
 #endif

@@ -5,10 +5,12 @@
  * @commande: chemin de la cde passée (ex: /bin/ls/tmp)
  */
 
-void execute_command(char *commande)
+void execute_commande(char *commande)
 {
 	pid_t pid_enfant;
-	char *argv[] = {commande, NULL};
+	char *argv[2];
+	argv[0] = commande;
+	argv[1] = NULL;
 	int status;
 
 	pid_enfant = fork();
