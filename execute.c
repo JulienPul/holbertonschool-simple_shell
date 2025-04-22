@@ -19,7 +19,7 @@ void execute_command(char *commande)
 	}
 
 	if (pid_enfant == 0)
-		
+	
 	{
 		if (execve(commande, argv, environ) == -1)
 		{
@@ -27,7 +27,7 @@ void execute_command(char *commande)
 			exit(EXIT_FAILURE);
 		}
 	}
-	else 
+	else
 	{
 		wait(NULL);
 	}
