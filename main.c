@@ -9,7 +9,6 @@ int main(void)
 	size_t len = 0;
 	ssize_t read;
 	char **argv;
-	int i = 0;
 
 	while (1)
 	{
@@ -34,6 +33,8 @@ int main(void)
 			execute_command(argv);
 		if (argv)
 		{
+			int i = 0;
+
 			while (argv[i])
 			{
 				free(argv[i]);
