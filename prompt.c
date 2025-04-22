@@ -27,7 +27,7 @@ void boucle_principale(void)
 			ligne_tapee[lu - 1] = '\0';
 
 		if (ligne_tapee[0] != '\0') /* Ignore les lignes vides */
-			executer_commande(ligne_tapee);
+			execute_commande(ligne_tapee);
 	}
 	free(ligne_tapee);
 }
