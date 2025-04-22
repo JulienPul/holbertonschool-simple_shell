@@ -12,8 +12,12 @@ void boucle_principale(void)
 
 	while (1)
 	{
-		printf("$ ");
-		fflush(stdout);
+		/* Affiche le prompt que si l'entrée vient du terminal donc que si user est en intéractif*/
+		if (isatty(STDIN_FILENO))
+		{
+			printf("$ ");
+			fflush(stdout);
+		}
 
 		lu = getline(&ligne_tapee, &taille_buffer_getline, stdin);
 
