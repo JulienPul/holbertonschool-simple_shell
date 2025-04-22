@@ -33,8 +33,18 @@ int main(void)
 			line[read - 1] = '\0';
 
 		argv = tokenize_line(line);
-		if (argv[0] != NULL)
+		if (argv && argv[0])
 			execute_command(argv);
+		if (argv)
+		{
+			int i = 0;
+			while (argv[i])
+			{
+				free(argv[i]);
+				i++;
+			}
+			free(argv);
+		}
 	}
 
 	free(line);
