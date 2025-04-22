@@ -12,7 +12,7 @@ void execute_commande(char *commande)
 	char *argv[2];
 	argv[0] = commande;
 	argv[1] = NULL;
-	
+
 
 	pid_enfant = fork();
 

@@ -5,8 +5,8 @@
  * Return: 0 si succès
  */
 
- int main(void)
- {
+int main(void)
+{
 	boucle_principale();
-	return(0);
- }
+	return (0);
+}
