@@ -3,13 +3,13 @@
  * main - main function for comand interpretor
  * Return: 0 if succes
  */
-
 int main(void)
 {
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
 	char **argv;
+	int i = 0;
 
 	while (1)
 	{
@@ -19,7 +19,6 @@ int main(void)
 			printf("#cisfun$ ");
 			fflush(stdout);
 		}
-
 		read = getline(&line, &len, stdin);
 		if (read == -1)
 		{
@@ -28,16 +27,13 @@ int main(void)
 				printf("\n");
 			break;
 		}
-
 		if (line[read - 1] == '\n')
 			line[read - 1] = '\0';
-
 		argv = tokenize_line(line);
 		if (argv && argv[0])
 			execute_command(argv);
 		if (argv)
 		{
-			int i = 0;
 			while (argv[i])
 			{
 				free(argv[i]);
@@ -46,7 +42,6 @@ int main(void)
 			free(argv);
 		}
 	}
-
 	free(line);
 	return (0);
 }
