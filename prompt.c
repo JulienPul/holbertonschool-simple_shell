@@ -19,7 +19,6 @@ void boucle_principale(void)
 
 		if (lu == -1) /* Ctrl+D ou EOF*/
 		{
-			free(ligne_tapee);
 			printf("\n");
 			break;
 		}
