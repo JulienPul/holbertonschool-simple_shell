@@ -27,7 +27,7 @@ void execute_commande(char *commande)
 	{
 		if (execve(commande, argv, environ) == -1)
 		{
-			perror("./shell");
+			fprintf(stderr, "./hsh: 1: %s: not found\n", commande);
 			exit(1);
 		}
 	}
