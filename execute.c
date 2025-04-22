@@ -3,7 +3,7 @@
  * execute_command - Exécute command with execve
  * @argv: array of arguments (ex: {"/bin/ls", "-l", NULL})
  */
-void execute_command(char **argv)
+void execute_command(char **argv, char *program_name)
 {
 	int status;
 	pid_t pid = fork();
@@ -36,7 +36,7 @@ void execute_command(char **argv)
 			free(path_copy);
 			}
 
-			fprintf(stderr, "./hsh: 1: %s: not found\n", argv[0]);
+			fprintf(stderr, "%s: %s: not found\n", program_name, argv[0]);
 			exit(127);
 		}
 	}
