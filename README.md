@@ -63,12 +63,12 @@ Expected Output:
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
 Flowchart
-To be added: a flowchart visualizing the internal logic of the shell.
+ a flowchart visualizing the internal logic of the shell.
+## Flowchart
 
+![Shell Flowchart](./flowchart.jpeg)
 <div align="center"> <img src="/flowchart.jpg" width="500" height="800"> </div>
 
-
-![flowchart jpg](https://github.com/user-attachments/assets/f0ff38d0-e473-4182-828d-f1e56a707880)
 collaborators
 Boutin Victoire
 Pulon Julien
