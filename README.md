@@ -66,7 +66,7 @@ Flowchart
  a flowchart visualizing the internal logic of the shell.
 ## Flowchart
 
-![Shell Flowchart](./flowchart.jpeg)
+![Shell Flowchart](flowchart.jpeg)
 <div align="center"> <img src="/flowchart.jpg" width="500" height="800"> </div>
 
 collaborators
