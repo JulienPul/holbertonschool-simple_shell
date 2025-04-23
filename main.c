@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main - Point d'entrée du Shell 0.1
- * Return: 0 si succès
+ * main - main function for command interpreter
+ * Return: 0 if success
  */
 int main(void)
 {
