@@ -23,8 +23,13 @@ void boucle_principale(void)
 
 		if (lu == -1) /* Ctrl+D ou EOF*/
 		{
-			break;
+			if (isatty(STDIN_FILENO))
+			printf("\n"); /* Affiche un \n propre uniquement si interactif */
+			free(ligne_tapee);
+			exit(0);
 		}
+
+	
 		if (ligne_tapee[lu - 1] == '\n')
 			ligne_tapee[lu - 1] = '\0';
 
