@@ -16,7 +16,7 @@ void execute_command(char **argv, char *program_name)
 	{
 		if (execve(argv[0], argv, environ) == -1)
 		{
-			path_env = getenv("PATH");
+			path_env = _getenv("PATH");
 			if (path_env != NULL)
 			{
 				path_copy = strdup(path_env);
