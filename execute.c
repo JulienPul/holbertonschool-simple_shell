@@ -1,18 +1,14 @@
 #include "main.h"
 
 /**
- * execute_command - Fonction qui execute une cde sans args ni PATH
- * @commande: chemin de la cde passée (ex: /bin/ls/tmp)
+ * execute_commande - Fonction qui exécute une commande avec ses arguments
+ * @commande: tableau d’arguments, commande[0] étant le programme
  */
 
-void execute_commande(char *commande)
+void execute_commande(char **commande)
 {
 	pid_t pid_enfant;
 	int status;
-	char *argv[2];
-	argv[0] = commande;
-	argv[1] = NULL;
-
 
 	pid_enfant = fork();
 
@@ -23,11 +19,10 @@ void execute_commande(char *commande)
 	}
 
 	if (pid_enfant == 0)
-
 	{
-		if (execve(commande, argv, environ) == -1)
+		if (execve(commande[0], commande, environ) == -1)
 		{
-			fprintf(stderr, "./hsh: 1: %s: not found\n", commande);
+			fprintf(stderr, "./hsh: 1: %s: not found\n", commande[0]);
 			exit(127);
 		}
 	}
