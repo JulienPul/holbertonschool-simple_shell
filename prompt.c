@@ -38,7 +38,7 @@ void boucle_principale(void)
 			arguments = tokenize_line(ligne_tapee); /* découpe la ligne */
 			if (arguments != NULL)
 			{
-				execute_commande(arguments); /* exécute la commande */
+				execute_commande(arguments);	   /* exécute la commande */
 				for (int i = 0; arguments[i]; i++) /* libère chaque mot */
 					free(arguments[i]);
 				free(arguments);
