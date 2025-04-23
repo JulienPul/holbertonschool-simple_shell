@@ -1,8 +1,6 @@
 #include "main.h"
 /**
  * main - main function for command interpreter
- * @argc: argument count (unused)
- * @argv: argument vector, used to get program name
  * Return: 0 if success
  */
 int main(void)
