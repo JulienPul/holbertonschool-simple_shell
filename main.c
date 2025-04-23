@@ -5,14 +5,13 @@
  * @argv: argument vector, used to get program name
  * Return: 0 if success
  */
-int main(int argc, char *argv[])
+int main(void)
 {
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
-	char **argv;
+	char **argv = NULL;
 	int i;
-	(void)argc;
 
 	while (1)
 	{
@@ -22,7 +21,6 @@ int main(int argc, char *argv[])
 		read = getline(&line, &len, stdin);
 		if (read == -1)
 		{
-			free(line);
 			if (isatty(STDIN_FILENO))
 				printf("\n");
 			break;
