@@ -20,19 +20,15 @@ Basic knowledge of POSIX system calls (e.g., fork, execve, wait)
 
 Usage Examples
 Interactive Mode:
-sh
-Copier
-Modifier
 $ ./hsh
 $ ls -l
 $ /bin/echo Hello
 $ exit
+
 Non-Interactive Mode:
-sh
-Copier
-Modifier
 $ echo "ls -l" | ./hsh
 $ ./hsh < script.sh
+
 Features
 ✅ Command execution through $PATH
 
@@ -56,24 +52,22 @@ main.h	Function prototypes and global variables (environ)
 execute_command.c	Executes commands via execve
 tokenize_line.c	Splits input line into tokens (arguments)
 _getenv.c	Retrieves environment variables manually
+
 Memory Leak Checks
 Use valgrind to ensure proper memory usage:
-
-sh
-Copier
-Modifier
 valgrind --leak-check=full ./hsh
-Expected Output:
 
-pgsql
-Copier
-Modifier
+
+Expected Output:
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
 Flowchart
 To be added: a flowchart visualizing the internal logic of the shell.
 
 <div align="center"> <img src="/flowchart.jpg" width="500" height="800"> </div>
+
 Collaborators;
 Boutin Victoire
 Pulon Julien
+updated : 24/04/2025
