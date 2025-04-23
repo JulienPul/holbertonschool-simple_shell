@@ -10,6 +10,7 @@ void boucle_principale(void)
 	size_t taille_buffer_getline = 0;
 	ssize_t lu;
 	char **arguments; /* variable qui va contenir les mots découpés */
+	int i;
 
 	while (1)
 	{
@@ -39,7 +40,7 @@ void boucle_principale(void)
 			if (arguments != NULL)
 			{
 				execute_commande(arguments);	   /* exécute la commande */
-				for (int i = 0; arguments[i]; i++) /* libère chaque mot */
+				for (i = 0; arguments[i]; i++) /* libère chaque mot */
 					free(arguments[i]);
 				free(arguments);
 			}
