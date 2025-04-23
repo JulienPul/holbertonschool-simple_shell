@@ -1,42 +1,44 @@
 #include "main.h"
 
 /**
- * tokenize_line - Fonction qui tokenize une ligne en 1 tableau d'args
- * @line: chaîne à découper (tokenizer) par strtok
- * Return: Tableau NULL ou tableau de char* terminé par NULL (à free après)
+ * tokenize_line - Splits a command line into an array of arguments
+ * @line: the input string to be tokenized using strtok
+ * Return: NULL if allocation fails, or a NULL-terminated array of strings
+ *         (each string is an argument, and must be freed afterwards)
  */
+
 char **tokenize_line(char *line)
 {
-	char **mots_token;
-	char *mot_token;
+	char **words_token;
+	char *word_token;
 	int i = 0;
 
-	mots_token = malloc(65 * sizeof(char *));
+	words_token = malloc(65 * sizeof(char *));
 
-	if (mots_token == NULL)
+	if (words_token == NULL)
 	{
 		perror("malloc");
 		return (NULL);
 	}
 
-	mot_token = strtok(line, " \n");
+	word_token = strtok(line, " \n");
 
-	while (mot_token != NULL)
+	while (word_token != NULL)
 	{
-		mots_token[i] = strdup(mot_token);
-		if (mots_token[i] == NULL)
+		words_token[i] = strdup(word_token);
+		if (words_token[i] == NULL)
 		{
 			perror("strdup");
 			while (i-- > 0)
 			{
-				free(mots_token[i]);
+				free(words_token[i]);
 			}
-			free(mots_token);
+			free(words_token);
 			return (NULL);
 		}
 		i++;
-		mot_token = strtok(NULL, " \n");
+		word_token = strtok(NULL, " \n");
 	}
-	mots_token[i] = NULL;
-	return (mots_token);
+	words_token[i] = NULL;
+	return (words_token);
 }
