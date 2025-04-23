@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * tokenize_line - Fonction qui tokenize une ligne en 1 tableau d'args
- * @line: chaîne à découper (tokenizer) par strtok
- * Return: Tableau NULL ou tableau de char* terminé par NULL (à free après)
+ * tokenize_line - Splits a command line into an array of arguments
+ * @line: the input string to be tokenized using strtok
+ * Return: NULL if allocation fails, or a NULL-terminated array of strings
+ *         (each string is an argument, and must be freed afterwards)
  */
+
 char **tokenize_line(char *line)
 {
 	char **words_token;
