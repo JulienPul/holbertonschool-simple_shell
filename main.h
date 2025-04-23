@@ -11,7 +11,8 @@
 extern char **environ;
 
 void boucle_principale(void);
-void execute_commande(char *commande);
+void execute_commande(char **commande);
+
 char **tokenize_line(char *line);
 
 
