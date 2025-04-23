@@ -67,7 +67,9 @@ To be added: a flowchart visualizing the internal logic of the shell.
 
 <div align="center"> <img src="/flowchart.jpg" width="500" height="800"> </div>
 
-Collaborators;
+
+![flowchart jpg](https://github.com/user-attachments/assets/f0ff38d0-e473-4182-828d-f1e56a707880)
+collaborators
 Boutin Victoire
 Pulon Julien
 updated : 24/04/2025
