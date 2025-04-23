@@ -23,7 +23,6 @@ void boucle_principale(void)
 
 		if (lu == -1) /* Ctrl+D ou EOF*/
 		{
-			printf("\n");
 			break;
 		}
 		if (ligne_tapee[lu - 1] == '\n')
