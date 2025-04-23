@@ -65,7 +65,7 @@ Expected Output:
 Flowchart
  a flowchart visualizing the internal logic of the shell.
 ## Flowchart
-<div align="center"> <img src="/flowchart.jpg" width="500" height="800"> </div>
+<div align="center"> <img src="flowchart.jpg" width="500" height="800"> </div>
 
 collaborators
 Boutin Victoire
