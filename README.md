@@ -74,7 +74,7 @@ valgrind --leak-check=full ./hsh
 A flowchart visualizing the internal logic of the shell:
 
 <div align="center">
-  <img src="flowchart.jpg" width="500" height="800">
+  <img src="flowchartfinal.jpg" width="500" height="800">
 </div>
 
 ## Collaborators
