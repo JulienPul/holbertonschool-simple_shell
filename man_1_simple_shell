@@ -1,1 +1,65 @@
+.TH simple_shell 1 "Avril 2025" "Holberton School" "User Commands"
+.SH NAME
+simple_shell \- minimal UNIX command-line interpreter
+.SH SYNOPSIS
+.B simple_shell
+.SH DESCRIPTION
+.B simple_shell
+is a basic UNIX command interpreter. It reads commands from standard input, splits them into tokens, and executes them. If the command is not given with an absolute path, the shell will search through the directories in the PATH environment variable.
+
+It replicates basic features of the standard Bourne shell.
+
+.SH FEATURES
+.TP
+.B Prompt
+Displays a \fB$\fR prompt in interactive mode.
+.TP
+.B Command Execution
+Executes commands either by absolute path or by searching in \fB$PATH\fR.
+.TP
+.B Built-in Command
+Supports the built-in command \fBexit\fR to terminate the shell.
+.TP
+.B Environment Variables
+Accesses environment variables via the global \fBenviron\fR and a custom \fB_getenv()\fR function.
+
+.SH FILES
+.TP
+.B main.c
+Main loop of the shell.
+.TP
+.B tokenize_line.c
+Splits input into tokens (words) using \fBstrtok\fR.
+.TP
+.B execute.c
+Forks and executes commands, handles PATH resolution.
+.TP
+.B _getenv.c
+Custom function to retrieve environment variable values.
+.TP
+.B main.h
+Header file with all declarations.
+
+.SH LIMITATIONS
+This shell does not support:
+.IP \[bu] 2
+Redirection (\fB>\fR, \fB<\fR), piping (\fB|\fR)
+.IP \[bu]
+Advanced shell features (globbing, variables, conditionals)
+.IP \[bu]
+Command chaining with \fB&&\fR or \fB||\fR
+
+.SH EXAMPLES
+.EX
+$ ls -l
+$ /bin/echo Hello
+$ exit
+.EE
+
+.SH AUTHORS
+Victoire BOUTIN <victoireboutin07@gmail.com>  
+Julien PULON <pulonjulien@gmail.com>
+
+.SH DATE
+April 2025
 
